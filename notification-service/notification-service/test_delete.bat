@@ -1,0 +1,3 @@
+@echo off
+echo Testing DELETE endpoint...
+curl -X DELETE http://localhost:8081/api/notifications/5

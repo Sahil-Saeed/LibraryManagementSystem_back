@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  overdues-fines-service:
+    build: .
+    ports:
+      - "8083:8083"
+    environment:
+      - SERVER_PORT=8083
+      - MEMBER_SERVICE_URL=http://member-service:8081
+      - BOOK_SERVICE_URL=http://book-service:8082
+    networks:
+      - library-network
+
+networks:
+  library-network:
+    external: true
